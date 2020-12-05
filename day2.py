@@ -23,10 +23,10 @@ def q(l:str) -> int:
             return 1
     return 0
 
-ll = sum([p(x) for x in open("input.txt").readlines()])
+ll = sum([p(x) for x in open("input2.txt").readlines()])
 print(ll)
 
-ll = sum([q(x) for x in open("input.txt").readlines()])
+ll = sum([q(x) for x in open("input2.txt").readlines()])
 print(ll)
 
 
