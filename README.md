@@ -1,4 +1,4 @@
 # AoC_2020
 
-Still Python as I hava little time. 
+Still Python as I have a little time. 
 Bad code quality.
