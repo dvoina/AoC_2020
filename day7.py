@@ -10,15 +10,13 @@ def traverse1(d, x, s):
             traverse1(d, p, s)
 
 def traverse2(d, x):
-    print(x, d[x])
-    if x=="no other":
-        return 1
+    print(x, d[x],)
     if d[x] == {}:
         return 1
     sum = 0    
     for k,v in d[x].items():
-        sum += v*traverse2(d, k)
-    return sum
+        sum += v * traverse2(d, k)
+    return sum + 1
 
 data = dict([(a.strip().split(" bags contain ")[0], a.strip().split("contain")[1].split(",")) for a in open("input7.txt").readlines()])
 parents = defaultdict(set)
@@ -35,4 +33,4 @@ for k,v in data.items():
 ss=set()
 traverse1(parents, "shiny gold", ss)
 print(len(ss))
-print(traverse2(data, "shiny gold"))
+print(traverse2(data, "shiny gold")-1)
