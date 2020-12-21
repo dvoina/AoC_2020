@@ -16,4 +16,9 @@ for size in range(2, len(data)):
     for i in range(len(data) - size):
         s = data[i:i+size]
         if sum(s) == n:
+<<<<<<< HEAD
             print(min(s) + max(s))
+=======
+            print(min(s) + max(s))
+            
+>>>>>>> 9a85b6e (more)
