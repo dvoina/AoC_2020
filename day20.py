@@ -21,7 +21,7 @@ class Tile(object):
         return sum(map(lambda x: 1 if x else 0, self.neigh))
 
     def dropBorders(self):
-        self.data=[d[1:-1] for d in data[1:-1]]
+        return [d[1:-1] for d in self.data[1:-1]]
 
     def matches(self, other):
         m = False
@@ -93,5 +93,14 @@ def solve(b, i, j, c, r):
 r = []
 solve(board, 0, 0, cand, r)
 
-print(r[0])
-
+sol = r[0]
+for i, r in enumerate(sol):
+    for j,c in enumerate(r):
+        for t in tiles:
+            if t.id==c:
+                sol[i][j] = t.dropBorders()
+map = []
+for r in sol:
+    for rr in range(8):
+        map.append("".join([c[rr] for c in r]))
+print("\n".join(map))
